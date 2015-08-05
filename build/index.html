@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Places By Metro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.blue_grey-blue.min.css" /> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <script type="text/javascript" src="slick.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="slick.css"/>
+
+    </head>
+    <body>
+      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+      <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+
+      <div class="card-container hidden">
+
+      </div>
+
+        <div class="mdl-layout mdl-js-layout layout-transparent">
+            <header class="mdl-layout__header mdl-layout__header--transparent">
+                <button id="type-filter-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <span id="type-menu-text-indicator">bar</span>
+                    <i class="material-icons">layers</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="type-filter-menu-lower-right">
+                      <li disabled class="mdl-menu__item type-filter-menu__item">Bar</li>
+                      <li class="mdl-menu__item type-filter-menu__item">Restaurant</li>
+                      <li class="mdl-menu__item type-filter-menu__item">Cafe</li>
+                </ul>
+                <button id="distance-filter-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <span id="distance-menu-text-indicator">500m</span>
+                    <i class="material-icons">directions_walk</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="distance-filter-menu-lower-right">
+                      <li class="mdl-menu__item distance-filter-menu__item">250m</li>
+                      <li disabled class="mdl-menu__item distance-filter-menu__item">500m</li>
+                      <li class="mdl-menu__item distance-filter-menu__item">750m</li>
+                      <li class="mdl-menu__item distance-filter-menu__item">1000m</li>
+                </ul>
+            </header>
+          <div class="mdl-layout__drawer" >
+            <span class="mdl-layout-title" id="drawer-title" style="padding-left: 16px; line-height: 40px;">Places</span>
+            <span class="mdl-layout-title" id="drawer-station-name" style="padding-left: 16px;color: lightgray;font-size: 11px;font-weight: 300;line-height: 5px;"></span>
+            <nav class="mdl-navigation"></nav>
+            <img class="powered-by-google-banner" src="images/powered-by-google-on-white.png"> </img>
+          </div>
+          <footer class="mdl-mini-footer">
+              <div class="mdl-mini-footer__left-section">
+                <p>Places by Metro is an interactive map helping commuters discover Bars, Restaurants and Cafes within walking distance from train stations in Melbourne. It uses Google’s Javascript API Library to source the highest rated venues as well as provide specific details such as address, opening hours and customer reviews and Google Maps to reference directions to each venue.</p>
+              </div>
+          </footer>
+            <button id="info-button" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                <i class="material-icons">info</i>
+            </button>
+        </div>
+
+    </body>
+
+</html>
