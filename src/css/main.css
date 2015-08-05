@@ -294,13 +294,17 @@ background: linear-gradient(to bottom, rgba(186,186,186,1) 0%,rgba(186,186,186,0
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', endColorstr='#00bababa',GradientType=0 );
 }
 .mdl-mini-footer {
-    z-index: 1;
+    overflow-y: scroll;
+    padding: 0;
+    z-index: 3;
     position: absolute;
     bottom: 0;
-    height: 35px;
-    -webkit-transform: translateY(100px);
-    -ms-transform: translateY(100px);
-    transform: translateY(100px);
+    right: 0;
+    width: 240px;
+    height: 100%;
+    -webkit-transform: translateX(240px);
+    -ms-transform: translateX(240px);
+    transform: translateX(240px);
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     will-change: transform;
@@ -317,18 +321,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', end
     transform: translateY(0);
 }
 .mdl-mini-footer__left-section {
-    padding: 10px;
-    padding-top: 0;
+    padding: 20px;
+    padding-top: 10px;
 }
 .mdl-mini-footer__left-section > p {
-  text-align: center;    
-  font-size: 12px;
+  font-size: 14px;
+  text-align: center;
 }
 .mdl-layout {
   overflow: hidden;
 }
 #info-button{
-    z-index: 1;
+    z-index: 6;
     position: absolute;
     bottom: 5px;
     right: 5px;
