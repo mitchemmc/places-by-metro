@@ -101,6 +101,10 @@ var map = function(){
 		//Handle station clicked
 		function clicked(d) {
 
+			var infoPanel = document.querySelector(".mdl-mini-footer.footer-visible");
+			if(infoPanel !== null)
+				infoPanel.className = "mdl-mini-footer"
+
 			var circle = d3.select(this).select("circle");//get the SVG circle for cx and cy values
 	      	if(active.node() == this) return reset();
 			

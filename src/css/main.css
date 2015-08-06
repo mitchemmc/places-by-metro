@@ -8,6 +8,11 @@ body {
   margin: 0;
   overflow: hidden; 
 }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .hidden {
 display: none;
 }
@@ -218,21 +223,9 @@ input {
 .mdl-layout__drawer-button {
     display: none;
 }
-@media screen and (min-width: 1025px)
-{
-    .mdl-layout--fixed-drawer>.mdl-layout__drawer {
-    -webkit-transform: translateX(-250);
-    -ms-transform: translateX(-250);
-    transform: translateX(-250);
-}
-}
 
-@media screen and (max-width: 1024px)
-{
-.mdl-layout__header {
-    display: block;
-}
-}
+
+
 .mdl-button--fab{
         position: absolute;
         right: 12px;
@@ -299,12 +292,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', end
     z-index: 3;
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 240px;
     height: 100%;
-    -webkit-transform: translateX(240px);
-    -ms-transform: translateX(240px);
-    transform: translateX(240px);
+    -webkit-transform: translateX(-240px);
+    -ms-transform: translateX(-240px);
+    transform: translateX(-240px);
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     will-change: transform;
@@ -326,40 +319,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', end
 }
 .mdl-mini-footer__left-section > p {
   font-size: 14px;
-  text-align: center;
+  text-align: justify;
 }
 .mdl-layout {
   overflow: hidden;
 }
 #info-button{
-    z-index: 6;
+    z-index: 3;
     position: absolute;
     bottom: 5px;
-    right: 5px;
+    left: 5px;
 }
 
 .card-container {
     position: absolute;
     right: 0;
+    top: 0;
     background: rgba(0, 0, 0, 0.17);
     z-index: 10;
     height: 100%;
     width: calc(100% - 240px);
     overflow-y: scroll;
 }
-/*
-@media screen and (max-width 800px)
-{
-  .card-container{
-    width: 100%;
-  }
-  .mdl-layout__drawer.drawer-visible {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-  .mdl-layout__drawer.drawer-visible~.mdl-layout__obfuscator
-}*/
 
 .detailed-info-card {
   width: 80%;
@@ -518,4 +499,62 @@ header.review__header {
 .slick-slide {
   background-size: cover;
   background-position: center;
+}
+
+/*
+ * Media Queries
+ *
+  */ 
+@media screen and (min-width: 1025px){
+    .mdl-layout--fixed-drawer>.mdl-layout__drawer {
+    -webkit-transform: translateX(-250);
+    -ms-transform: translateX(-250);
+    transform: translateX(-250);
+    }
+}
+
+@media screen and (max-width: 1024px){
+.mdl-layout__header {
+    display: block;
+}
+}
+
+
+@media screen and (max-width: 815px){
+
+  .card-container {
+    width: 100%;
+  }
+
+  .mdl-layout__drawer.drawer-visible.is-visible {
+    -webkit-transform: translateX(-240);
+    -ms-transform: translateX(-240);
+    transform: translateX(-240);
+  }
+  /*.mdl-layout__drawer.drawer-visible~.mdl-layout__obfuscator*/
+  .card-container:not(.hidden)~.mdl-layout__drawer.drawer-visible{
+    -webkit-transform: translateX(-240px) !important;
+    -ms-transform: translateX(-240px) !important;
+    transform: translateX(-240px) !important;
+  }
+
+}
+@media screen and (max-width: 500px){
+  .detailed-info-card > .mdl-card__supporting-text {
+    padding: 0;
+    padding-left: 16px;
+  }
+  .review > .minilogo {
+    display: none;
+  }
+  .review > .review__text {
+    padding-left: 0;
+  }
+  .detailed-info-card > .mdl-card__actions {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .detailed-info-card > .mdl-card__actions > .mdl-button {
+    align-self: auto;
+  }
 }

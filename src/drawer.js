@@ -20,7 +20,6 @@ var detailsCard = require('./details-card');
         document.querySelector('.card-container').addEventListener('click', function(e){
             e = window.event || e; 
             if(this === e.target) {
-                console.log("HIDE CARD");
                 detailsCard.hide();
                 detailsCard.depopulate(); 
             }
@@ -39,7 +38,6 @@ var detailsCard = require('./details-card');
                 var type = this.innerHTML.replace(/<[^>]*>/g, "").toLowerCase();
                 drawer.filterType = type;
                 document.querySelector('#type-menu-text-indicator').innerHTML = type;
-                console.log(type.length * 20 + 5 + "px");
                 document.querySelector('#distance-filter-menu-lower-right').style.right = type.length * 7 + 44 + "px";
 
             });
@@ -125,8 +123,6 @@ var detailsCard = require('./details-card');
                     if(isNaN(b.rating)) return -1;
                     return (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0);//sort decending
                 });
-
-                console.log(sorted);
 
                 sorted.forEach(function(el){
 
