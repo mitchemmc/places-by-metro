@@ -126,6 +126,8 @@ var detailsCard = require('./details-card');
 
                 sorted.forEach(function(el){
 
+                    console.log(el);
+
                     var card = document.createElement('div');
                     var card_media = document.createElement('div');
                     var card_meta = document.createElement('div');
@@ -145,7 +147,7 @@ var detailsCard = require('./details-card');
                     card_fab_icon.className = 'material-icons';
                     card_rating_stars.className = 'material-icons ratings-star';
                     
-                    var directionsURL = 'https://www.google.com.au/maps/dir/' + lat + ",+" + lon + "/'" + el.geometry.location.G + ',' + el.geometry.location.K + "'/";
+                    var directionsURL = 'https://www.google.com.au/maps/dir/' + lat + ",+" + lon + "/'" + el.geometry.location.lat() + ',' + el.geometry.location.lng() + "'/";
                     card_media.addEventListener('click', function(){
                        // window.open('http://www.google.com/search?q=' + el.name + " " + el.vicinity, '_blank');
                        detailsCard.hide();
